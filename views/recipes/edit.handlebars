@@ -1,0 +1,26 @@
+{{#each errors}}
+
+<div class="alert alert-danger">{{text}}</div>
+
+{{else}}
+
+{{/each}}
+
+<div class="card card-body">
+	<h3>Edit Recipe</h3>
+	<form action="/recipes" method="post">
+		<div class="form-group">
+			<label for="title">Title</label>
+			<input type="text" class="form-control" name="title" value="{{recipe.title}}" required>
+		</div>
+		<div class="form-group">
+			<label for="ingredients">Ingredients</label>
+			<input type="text" class="form-control" name="ingredients" value="{{recipe.ingredients}}" required>
+		</div>
+		<div class="form-group">
+			<label for="instructions">Instructions</label>
+			<textarea class="form-control" rows="3" name="instructions" required>{{recipe.instructions}}</textarea>
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>

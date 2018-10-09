@@ -1,0 +1,10 @@
+{{#each recipes}}
+    <div class="card card-body mb-2">
+    	<h4>{{title}}</h4>
+    	<p>{{ingredients}}</p>
+    	<p>{{instructions}}</p>
+    	<a href="/recipes/edit/{{id}}" class="btn btn-warning">Edit</a>
+    </div>
+{{else}}
+    <p>No recipes found :(</p>
+{{/each}}
