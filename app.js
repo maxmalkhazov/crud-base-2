@@ -68,7 +68,14 @@ app.post('/recipes', (req, res) => {
 			instructions: req.body.instructions
 		});
 	} else {
-		res.send('Ok!');
+		const newUser = {
+			title: req.body.title,
+			ingredients: req.body.ingredients,
+			instructions: req.body.instructions
+		}
+		new Recipe(newUser).save().then(recipe => {
+			res.redirect('/recipes')
+		});
 	}
 });
 
